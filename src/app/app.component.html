@@ -1,11 +1,16 @@
 <h1>Form Grouping in Reactive Forms</h1>
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
 <input type="text" placeholder="enter name" formControlName="name">
+<br>
+<span style="color: red;" *ngIf="name?.hasError('required') && name?.invalid && (name?.dirty || name?.touched)">Name is required !!!</span>
 <br><br>
 <input type="password" placeholder="enter password" formControlName="password">
+<br>
+<span style="color: red;" *ngIf="password?.hasError('required') && password?.invalid && (email?.dirty || password?.touched)">Password is required !!!</span>
 <br><br>
 <input type="email" placeholder="enter email" formControlName="email">
-
+<br>
+<span style="color: red;" *ngIf="email?.hasError('required') && email?.invalid && (email?.dirty || email?.touched)">Email is required !!!</span>
 <br><br>
 <button>Submit</button>
 </form>
